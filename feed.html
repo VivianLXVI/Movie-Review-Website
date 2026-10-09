@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Feed - Movie Review</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="nav">
+    <div><strong>Movie Review</strong><span>Community Feed</span></div>
+    <div>
+      <a href="feed.html">Feed</a>
+      <a href="moviefeed.html">Movies</a>
+      <a id="myProfileLink" href="myprofileuser.html">My Profile</a>
+      <button id="authButton">Login</button>
+    </div>
+  </div>
+</header>
+<main class="dashboard">
+  <section class="welcome">
+    <p class="eyebrow">COMMUNITY</p>
+    <h1>Latest Reviews</h1>
+    <p>See what everyone is watching and rating.</p>
+  </section>
+
+  <section class="page-section" data-login-only hidden>
+    <article class="panel">
+      <h2>Write a Review</h2>
+      <form id="postForm" class="form-grid">
+        <label>Movie
+          <select id="movieSelect" required>
+            <option value="">Loading movies...</option>
+          </select>
+        </label>
+        <label>Rating (1-10)
+          <input id="rating" type="number" min="1" max="10" step="0.5" required>
+        </label>
+        <label>Comment
+          <textarea id="comment" rows="3" required placeholder="What did you think?"></textarea>
+        </label>
+        <button type="submit" class="primary">Post review</button>
+        <p id="postMessage" class="message"></p>
+      </form>
+    </article>
+  </section>
+
+  <section class="page-section" data-guest-only hidden>
+    <article class="panel">
+      <p><a href="login.html">Log in</a> or <a href="adduser.html">create an account</a> to post a review.</p>
+    </article>
+  </section>
+
+  <section class="page-section">
+    <article class="panel">
+      <h2>All Reviews</h2>
+      <div id="feedList"><p class="muted">Loading reviews...</p></div>
+    </article>
+  </section>
+</main>
+<script src="common.js"></script>
+<script src="feed.js"></script>
+</body>
+</html>

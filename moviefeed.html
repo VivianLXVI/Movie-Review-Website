@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movies - Movie Review</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="nav">
+    <div><strong>Movie Review</strong><span>Movie Catalog</span></div>
+    <div>
+      <a href="feed.html">Feed</a>
+      <a href="moviefeed.html">Movies</a>
+      <a id="myProfileLink" href="myprofileuser.html">My Profile</a>
+      <button id="authButton">Login</button>
+    </div>
+  </div>
+</header>
+<main class="dashboard">
+  <section class="welcome">
+    <p class="eyebrow">MOVIES</p>
+    <h1>Browse Movies</h1>
+    <p>Pick a movie to read reviews or add your own.</p>
+  </section>
+
+  <section class="page-section" data-admin-only hidden>
+    <article class="panel">
+      <h2>Add a Movie</h2>
+      <form id="addMovieForm" class="form-grid">
+        <label>Title
+          <input id="newTitle" type="text" required>
+        </label>
+        <label>Release date
+          <input id="newDate" type="date" required>
+        </label>
+        <label>Genre
+          <input id="newGenre" type="text" required placeholder="e.g. Drama">
+        </label>
+        <label>Description
+          <textarea id="newDescription" rows="3" required></textarea>
+        </label>
+        <button type="submit" class="primary">Add movie</button>
+        <p id="addMessage" class="message"></p>
+      </form>
+    </article>
+  </section>
+
+  <section class="page-section">
+    <article class="panel">
+      <div class="controls">
+        <label>Sort by
+          <select id="sortSelect">
+            <option value="date">Release date</option>
+            <option value="rating">Rating</option>
+            <option value="genre">Genre</option>
+            <option value="title">Title</option>
+          </select>
+        </label>
+        <label>Order
+          <select id="orderSelect">
+            <option value="desc">Highest / newest first</option>
+            <option value="asc">Lowest / oldest first</option>
+          </select>
+        </label>
+        <label>Genre
+          <select id="genreSelect">
+            <option value="">All genres</option>
+          </select>
+        </label>
+      </div>
+    </article>
+  </section>
+
+  <section class="page-section">
+    <div id="movieList" class="movie-list"><p class="muted">Loading movies...</p></div>
+  </section>
+</main>
+<script src="common.js"></script>
+<script src="moviefeed.js"></script>
+</body>
+</html>
